@@ -1,0 +1,27 @@
+{
+  "id": "./",
+  "name": "我们的纪念日",
+  "short_name": "纪念日",
+  "description": "记录我们在一起的每一天。",
+  "lang": "zh-CN",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#FDF2F8",
+  "background_color": "#FDF2F8",
+  "icons": [
+    {
+      "src": "./app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

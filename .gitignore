@@ -1,0 +1,30 @@
+# Secrets and local environment overrides
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local-only site configuration. Keep js/site-config.js tracked because the
+# published static site loads it directly.
+js/site-config.local.js
+
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

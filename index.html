@@ -6,334 +6,195 @@
   <meta name="format-detection" content="address=no">
   <meta name="applicable-device" content="mobile">
   <meta name="author" content="JackLu">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="screen-orientation" content="portrait">
   <meta name="description" content="记录我们的爱情">
-  <meta name="theme-color" content="#f7d7da">
-  <!-- 配置Open graph -->
+  <meta name="theme-color" content="#FDF2F8" id="theme-color">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://love.liesys.com/">
   <meta property="og:description" content="记录“我们在一起走过点点滴滴”">
   <meta property="og:title" content="轻轻地说一声：“我喜欢你！”">
-  <meta property="og:image" content="@pic-icon.png">
+  <meta property="og:image" content="./pic-icon.png">
   <meta property="og:image:width" content="140">
   <meta property="og:image:height" content="109">
-  <title>宝贝,感谢你一直的陪伴！</title>
-  <style>
-    html,body,.snow{
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    margin: 0;
-  }
-  </style>
+  <meta property="og:image:alt" content="情侣纪念日页面封面">
+  <title>纪念日</title>
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./css/index.css">
-  <script src="./js/jquery.js"></script>
-  <script src="./js/three.js"></script>
-  <script src="./js/count-time.js"></script>
-
+  <link rel="apple-touch-icon" href="./app-icon-192.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./css/index.css?v=font-woff2">
+  <script src="./js/three.js" defer></script>
+  <script src="./js/site-config.js" defer></script>
+  <script src="./js/count-time.js" defer></script>
+  <script src="./js/app.js" defer></script>
+  <script src="./js/pwa.js" defer></script>
 </head>
-
-<body>
-  <div class="music">
-    <i class="iconfont music-close">&#xea28;</i>
-    <!-- <audio class="audio" src="./media/dongxi-md.mp3" preload autoplay loop></audio>  -->
-    <audio class="audio" preload autoplay loop>
-      <source src="./media/zui-mei-qing-lv-cut.mp3" type="audio/mpeg"> Your browser does not support the audio element.</audio>
-  </div>
-  <div class="banner ovh">
-    <div class="swiper-wrap">
-      <img id="current-img" src="./images/love.jpg" alt="Love photo">
-      <p class="img-intro">轻轻地说一声：“我喜欢你！”</p>
+<body class="access-pending">
+  <section class="access-gate" aria-labelledby="access-title">
+    <div class="access-gate-card">
+      <p class="eyebrow">JUST FOR US</p>
+      <h1 id="access-title">我们的私密小天地</h1>
+      <p class="access-gate-copy" id="access-copy">输入访问密码，继续查看我们的故事。</p>
+      <form class="access-form">
+        <label class="access-password-field" for="access-password">访问密码<input id="access-password" type="password" autocomplete="current-password" required></label>
+        <p class="access-status" role="status" aria-live="polite"></p>
+        <button class="primary-button access-submit" type="submit">进入纪念页</button>
+      </form>
     </div>
-    <!-- <video class="video hide" webkit-playsinline="" playsinline="" x5-playsinline="" controls loop src=""></video> -->
-  </div>
-  <p class="intro self-design">the times we together</p>
-  <p class="date self-design">
-    <span id="day" class="time-font"></span>
-    <span class="date-icon" style="color:#FF9999" data-text="days">/&nbsp;</span>
-    <span id="hour" class="time-font"></span>
-    <span class="date-icon" style="color:#FF9999" data-text="hours">/&nbsp;</span>
-    <span id="minute" class="time-font"></span>
-    <span class="date-icon" style="color:#FF9999" data-text="min">/&nbsp;</span>
-    <span id="second" class="time-font"></span>
-    <span class="date-icon" style="color:#FF9999" data-text="sec">/&nbsp;</span>
-  </p>
-  <p class="svg">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="9001302152" x="0px"
-      y="0px" width="100%" height="100%" viewBox="0 0 141.4 69.4" style="enable-background:new 0 0 141.4 69.4;" xml:space="preserve"
-      preserveAspectRatio="none" class="element svg-element">
-      <g>
-        <path style="fill:#FF3939;" d="M134.5,9c-3.9-3.9-8.2-5.4-13.4-3.2c-3.5,1.5-7.9,4.4-9.4,8.2c-3.8-7.9-11.4-13.9-20.5-13.2   c-9.2,0.6-16.2,7-19.1,15.3c-1.8-5.9-7.8-10.3-13.2-13c-7.7-3.8-17.3-4.6-24.7,0.5c-3.8,2.6-6.1,6.6-7.5,11   C25,11,22.2,7.5,18.5,5.9c-4.4-1.8-7.8,0.5-10.7,3.7C3.6,14.1-4.8,28.1,3.6,32.3c0.3,0.2,0.6,0.1,0.9,0c1,0.3,2.1,0.2,3.2-0.3   c1.2-0.6,2.3-1.8,3.2-3.2c2.6,1.2,5.8,0,7.5-2.2c1.4,0.8,3.4,0.6,4.8,0c0.5-0.2,1.1-0.6,1.7-1c-0.1,1.8,0,3.6,0.1,5.3   C25.4,41,29,50.7,36,58c14,14.7,38.9,13.3,56.5,6.3c8-3.2,14.4-8.4,17.8-16.5c2.6-6.4,4.4-13.8,4.2-21c1.9,1.9,5,2.3,7.3,0.9   c0.5,0.4,1,0.7,1.5,1c2.3,1,5,0.8,6.9-0.8c1.2,1,2.5,1.6,3.9,1.8c0,0.5,0.3,1,1,1C147.2,29.8,139,13.5,134.5,9z M25,22.6   c-0.8,0.7-1.5,1.5-2.6,2c-1,0.4-2.1,0.5-3.1,0.5c0.4-1.1,0.5-2.2,0.1-3.4c-0.2-0.6-1.1-0.7-1.3,0c-0.4,1.7-0.9,3.4-2.2,4.5   c-1.2,1-2.8,1.4-4.4,1.4c0.8-1.7,1.2-3.6,1-5.1c-0.1-0.7-1-1.1-1.4-0.4c-1.1,2.1-1.6,4.4-2.9,6.3c-0.6,0.9-1.5,1.9-2.7,2   c-0.4,0-0.9,0-1.4-0.2c-2.8-2.7-1.2-7.4,0-10.5c1.1-2.9,2.7-5.5,4.7-7.9c2.8-3.2,5.7-5,10.2-3c2.6,1.1,5.3,5.1,6.8,7.3   c0.1,0.1,0.1,0.2,0.2,0.2C25.6,18.4,25.2,20.5,25,22.6z M94,60.5c-13.3,6.3-33.5,8.7-46.9,2c-15.8-7.9-21.4-26.8-18.3-43.2   C30.7,8.9,38,1.6,49,2.7c9.2,0.9,22.4,8.6,21.7,19.1c0,0.8,1.2,1,1.5,0.4c0.6,0,1.1-0.2,1.3-1c2.1-8.5,7.9-16,17-17.2   C99.6,3,107,9.6,109.9,17.8C115.2,32.8,108.6,53.6,94,60.5z M136,28.1c-1.9-0.5-3.8-1.6-5.1-3.1c-1.5-1.7-2.1-4.1-3.8-5.5   c-0.5-0.4-1.2-0.1-1.2,0.5c0,2.1,1.3,4.6,2.8,6.4c-1.5,0.5-3.1,0.5-4.5-0.2c-1.8-1-2.2-2.8-3.2-4.4c-0.4-0.6-1.2-0.4-1.4,0.2   c-0.6,1.5-0.1,3.1,0.9,4.4c-1.9,0.1-3.9-0.9-5-2.5c-0.3-0.4-0.8-0.6-1.2-0.5c-0.3-2.6-0.9-5.2-1.9-7.7c0-0.1-0.1-0.1-0.1-0.2   c5-3.8,10.2-11.7,17.6-7.4C135.1,11.1,143.6,24,136,28.1z"></path>
-        <path style="fill:#FF3939;" d="M43.1,46.1c-0.2-0.1-0.5-0.2-0.8-0.2c0.5-4.9-0.1-10.5-0.8-15.3c0.5,0,1-0.1,1.5-0.2   c0.9-0.2,0.9-1.6,0-1.8c-1.3-0.3-2.9-0.2-4.2,0c-0.9,0.1-0.9,1.7,0,1.8c0.3,0,0.5,0.1,0.8,0.1c-0.2,4.8-0.3,10.4,0.5,15.2   c-0.5,0-0.9,0.1-1.4,0.1c-1.1,0.2-0.9,2.1,0.3,2c1.2-0.1,2.2,0.1,3.4,0.3C43.8,48.3,44.3,46.6,43.1,46.1z"></path>
-        <path style="fill:#FF3939;" d="M67.9,32.6c0.3-2.7-2-5.5-4.8-5.6c-1.5,0-2.9,0.6-3.9,1.7c-0.2,0.3-0.5,0.6-0.7,1   c-0.8-1.3-2.2-2.2-3.9-2.3c-2.2-0.1-5.1,1.6-5.2,4c-3.2,6.6-1,18.6,7.6,18.9C65.9,50.6,68.9,40,67.9,32.6z M57.4,48.3   c-4.5,0.1-7.1-4.6-7.4-8.5c-0.2-2.7,0.7-5.3,0.8-7.9c0.9-1.1,1.6-2.3,3.3-2.3c1.8-0.1,3.2,1.5,3.6,3.1c0.2,0.9,1.7,0.7,1.7-0.2   c0.1,0,0.1-0.1,0.2-0.1c0.6-0.5,0.5-1.2,0.9-1.9c0.5-0.8,1.5-1.3,2.5-1.3c2.2,0,3.1,2.5,3.3,4.3c0,0,0,0,0,0   C65.8,39.5,65.2,48.1,57.4,48.3z"></path>
-        <path style="fill:#FF3939;" d="M77.8,27.5c-0.2,0-0.5,0.1-0.6,0.3c-0.4,0.8,0.1,1.7,0.1,2.6c0,1-0.6,2-1.6,2.3   c-2.6,0.8-2.8-2.5-3-4.2c-0.1-0.5-0.7-0.7-0.9-0.1c-0.6,1.5-0.9,3.4,0.1,4.9c0.7,1.1,1.9,1.7,3.2,1.7c-0.3,2.2-0.3,4.4-0.2,6.5   c0.1,2.2,0,4.7,1.1,6.7c0.4,0.6,1.3,0.5,1.5-0.2c0.6-2.2,0-4.8-0.2-7.1c-0.2-2.1-0.3-4.2-0.6-6.3c1.4-0.5,2.5-1.8,2.8-3.2   C79.7,30.2,79.5,27.6,77.8,27.5z"></path>
-        <path style="fill:#FF3939;" d="M90.5,42.1c0-4.2,0.1-10.4-3.4-13.3c-0.2-0.2-0.5-0.2-0.7-0.2c-5.3-3.1-4.9,6.5-4.8,9   c0.2,3.2-0.4,12.9,5.3,11.3c0.4-0.1,0.6-0.4,0.6-0.7C90,47.9,90.5,44.4,90.5,42.1z M86.7,47.1C86.7,47.1,86.7,47.1,86.7,47.1   c-1.6,0-2.4-4-2.5-5.1c-0.1-1.2-0.2-2.4-0.3-3.7c-0.1-1.8-1.2-8.3,1.9-8.8c0,0.1,0.1,0.3,0.2,0.4C89.2,33.3,89.9,43.2,86.7,47.1z"></path>
-        <path style="fill:#FF3939;" d="M100.8,34.7c-0.2-2.7-0.4-5.5-1.1-8c-0.3-0.9-1.6-0.7-1.6,0.2c0,1.8,2.3,18.2-0.9,17.6   c-0.2,0-0.4,0-0.6,0.1c-3-2.3-2.3-14.4-2.8-16.7c-0.1-0.6-0.9-0.5-1.1,0c-0.8,2.7-1.1,24,5.9,18.7c0.1-0.1,0.2-0.2,0.3-0.3   c1.3-0.5,2-1.8,2.3-3.5C101.4,40.2,101,37.3,100.8,34.7z"></path>
-      </g>
+  </section>
+  <button class="pwa-install" type="button" hidden>安装 App</button>
+  <p class="pwa-install-status" role="status" aria-live="polite" hidden></p>
+  <button class="music" type="button" aria-label="播放背景音乐" aria-pressed="false">
+    <svg class="music-close" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+      <path d="M9 18V5l10-2v13" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+      <circle cx="6" cy="18" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <circle cx="16" cy="16" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
     </svg>
-  </p>
-  <p class="our-name self-design">Bai <span>&</span> Yang</p>
-    <script>
-    //设置起始日期
-    countTime('2025/10/18 00:00', 'day', 'hour', 'minute', 'second');
-    var days = parseInt($('#day').text());
-    var now = new Date();
-    var years = now.getFullYear();
-    var month = now.getMonth() + 1;
-    var dateDay = now.getDate();
-    // 设置标题
-    if (month == 2 && dateDay == 12) {
-      $(document).attr("title", "在一起" + parseInt(years - 2017) + "年,始于初见,终于到老。");
-    } else if (dateDay == 12) {
-      $(document).attr("title", "在一起" + parseInt(days / 30) + "个月,始于初见,终于到老。");
-    } else
-      $(document).attr("title", "在一起" + days + "天,始于初见,终于到老。");
-
-    $(function () {
-
-      if (/MSIE 6|MSIE 7|MSIE 8/.test(navigator.userAgent)) {
-        return
-      }
-      var container = document.querySelector(".snow");
-      // IE9-10 pointer-events兼容
-      if (/MSIE 9|MSIE 10/.test(navigator.userAgent)) {
-        $(container).bind('click mousemove', function (evt) {
-          this.style.display = 'none';
-          var x = evt.pageX,
-            y = evt.pageY
-          if ($(document).scrollTop() > 0 || $(document).scrollTop() > 0) {
-            x = x - $(document).scrollLeft() + 1
-            y = y - $(document).scrollTop() + 1
-          }
-          evt.preventDefault();
-          evt.stopPropagation();
-          var under = document.elementFromPoint(x, y);
-          var evtType = evt.type === 'click' ? 'click' : 'mouseenter'
-          if (evt.type === 'click') {
-            $(under)[0].click();
-          } else {
-            $(under).trigger('mouseenter');
-          }
-          $('body').css('cursor', 'default')
-          this.style.display = '';
-          return false;
-        });
-      }
-      var containerWidth = $(container).width();
-      var containerHeight = $(container).height();
-      var particle;
-      var camera;
-      var scene;
-      var renderer;
-      var mouseX = 0;
-      var mouseY = 0;
-      var windowHalfX = window.innerWidth / 2;
-      var windowHalfY = window.innerHeight / 2;
-      var particles = [];
-      var particleImages = [new Image(), new Image(), new Image(), new Image(), new Image()];
-
-      particleImages[0].src = "./images/snow/snow1.png";
-      particleImages[1].src = "./images/snow/snow2.png";
-      particleImages[2].src = "./images/snow/snow3.png";
-      particleImages[3].src = "./images/snow/snow4.png";
-      particleImages[4].src = "./images/snow/snow5.png";
-      var snowNum = window.innerWidth < 768 ? 120 : 220;
-
-      function init() {
-        camera = new THREE.PerspectiveCamera(75, containerWidth / containerHeight, 1, 10000);
-        camera.position.z = 1000;
-        scene = new THREE.Scene();
-        scene.add(camera);
-        renderer = new THREE.CanvasRenderer();
-        renderer.setSize(containerWidth, containerHeight);
-        for (var i = 0; i < snowNum; i++) {
-          var material = new THREE.ParticleBasicMaterial({
-            map: new THREE.Texture(particleImages[i % 5])
-          });
-          particle = new Particle3D(material);
-          particle.position.x = Math.random() * 2000 - 1000;
-          particle.position.y = Math.random() * 2000 - 1000;
-          particle.position.z = Math.random() * 2000 - 1000;
-          particle.scale.x = particle.scale.y = 1;
-          scene.add(particle);
-          particles.push(particle)
-        }
-        container.appendChild(renderer.domElement);
-        document.addEventListener("mousemove", onDocumentMouseMove, false);
-        document.addEventListener("touchstart", onDocumentTouchStart, false);
-        document.addEventListener("touchmove", onDocumentTouchMove, false);
-        loop();
-      }
-
-      function onDocumentMouseMove(event) {
-        mouseX = event.clientX - windowHalfX;
-        mouseY = event.clientY - windowHalfY
-      }
-
-      function onDocumentTouchStart(event) {
-        if (event.touches.length === 1) {
-          event.preventDefault();
-          mouseX = event.touches[0].pageX - windowHalfX;
-          mouseY = event.touches[0].pageY - windowHalfY
-        }
-        event.preventDefault();
-      }
-
-      function onDocumentTouchMove(event) {
-        if (event.touches.length === 1) {
-          event.preventDefault();
-          mouseX = event.touches[0].pageX - windowHalfX;
-          mouseY = event.touches[0].pageY - windowHalfY
-        }
-        event.preventDefault();
-      }
-
-      function loop() {
-        for (var i = 0; i < particles.length; i++) {
-          var particle = particles[i];
-          // 滚动到楼层模块，减少雪花 （自定义）
-          if ($(window).scrollTop() < 1000) {
-            particle.scale.x = particle.scale.y = 1;
-          } else {
-            if (i > particles.length / 5 * 3) {
-              particle.scale.x = particle.scale.y = 0;
-            } else {
-              particle.scale.x = particle.scale.y = 0.8;
-            }
-          }
-          particle.updatePhysics();
-          with(particle.position) {
-            if (y < -1000) {
-              y += 2000
-            }
-            if (x > 1000) {
-              x -= 2000
-            } else {
-              if (x < -1000) {
-                x += 2000
-              }
-            }
-            if (z > 1000) {
-              z -= 2000
-            } else {
-              if (z < -1000) {
-                z += 2000
-              }
-            }
-          }
-        }
-        camera.position.x += (mouseX - camera.position.x) * 0.005;
-        camera.position.y += (-mouseY - camera.position.y) * 0.005;
-        camera.lookAt(scene.position);
-        renderer.render(scene, camera)
-        requestAnimationFrame(loop);
-      }
-      init()
-    });
-  </script>
+  </button>
+  <p id="music-hint" class="music-hint" role="status"></p>
+  <audio class="audio" preload="metadata" loop></audio>
+  <main>
+    <figure class="banner ovh">
+      <img id="current-img" alt="">
+      <figcaption class="img-intro" aria-live="polite"><span id="photo-caption"></span><time id="photo-date"></time></figcaption>
+      <div class="gallery-actions">
+        <button class="gallery-icon previous-photo" type="button" aria-label="上一张照片"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m14.5 5-7 7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></button>
+        <button class="gallery-icon next-photo" type="button" aria-label="下一张照片"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9.5 5 7 7-7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></button>
+      </div>
+      <div class="gallery-bottom-controls">
+        <div class="gallery-dots" role="group" aria-label="选择照片"></div>
+        <div class="gallery-utility">
+          <button class="carousel-toggle" type="button" aria-label="暂停照片轮播" aria-pressed="false">暂停</button>
+          <button class="gallery-icon fullscreen-photo" type="button" aria-label="全屏查看当前照片"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M21 16v5h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></button>
+        </div>
+      </div>
+    </figure>
+    <p id="intro" class="intro self-design"></p>
+    <div class="date self-design" role="timer" aria-label="我们在一起的时间">
+      <span class="time-block"><span id="day" class="time-font">0</span><span class="time-label">days</span></span>
+      <span class="date-divider" aria-hidden="true">/</span>
+      <span class="time-block"><span id="hour" class="time-font">0</span><span class="time-label">hours</span></span>
+      <span class="date-divider" aria-hidden="true">/</span>
+      <span class="time-block"><span id="minute" class="time-font">0</span><span class="time-label">min</span></span>
+      <span class="date-divider" aria-hidden="true">/</span>
+      <span class="time-block"><span id="second" class="time-font">0</span><span class="time-label">sec</span></span>
+    </div>
+    <p class="svg" aria-hidden="true">
+      <svg viewBox="0 0 32 32" focusable="false"><path d="M16 28S3 19.4 3 10.5C3 6.9 5.9 4 9.5 4c2.5 0 4.8 1.4 6.5 3.8C17.7 5.4 20 4 22.5 4 26.1 4 29 6.9 29 10.5 29 19.4 16 28 16 28Z"/></svg>
+    </p>
+    <p class="our-name self-design"><span id="first-name"></span><span aria-hidden="true">&amp;</span><span id="second-name"></span></p>
+    <section class="memory-section anniversary-section" aria-labelledby="anniversary-heading">
+       <div class="section-heading"><p class="eyebrow" id="anniversary-eyebrow"></p><h1 id="anniversary-heading"></h1></div>
+       <div class="anniversary-card"><p class="anniversary-name" id="next-anniversary-name"></p><p class="countdown-label" id="anniversary-countdown-label"></p><p class="countdown"><span id="anniversary-days">0</span><small id="anniversary-days-label"></small></p><p class="anniversary-date" id="next-anniversary-date"></p></div>
+    </section>
+    <section class="memory-section" aria-labelledby="letter-heading">
+       <div class="section-heading split-heading"><div><p class="eyebrow" id="letter-eyebrow"></p><h2 id="letter-heading"></h2></div><button class="text-button refresh-message" type="button"></button></div>
+       <blockquote class="love-letter" id="love-letter" aria-live="polite"></blockquote>
+    </section>
+    <section class="memory-section wishlist-section" aria-labelledby="wishlist-heading">
+       <div class="section-heading"><p class="eyebrow" id="wishlist-eyebrow"></p><h2 id="wishlist-heading"></h2></div>
+       <p class="wishlist-intro" id="wishlist-intro"></p>
+       <ul class="wishlist" id="wishlist"></ul>
+       <form class="wishlist-form">
+         <label class="wishlist-title-field" for="wishlist-title">新的心愿<input id="wishlist-title" name="wishlist-title" type="text" maxlength="60" required></label>
+         <label for="wishlist-category">分类<select id="wishlist-category" name="wishlist-category"></select></label>
+         <button class="primary-button" type="submit" id="wishlist-submit"></button>
+         <p class="wishlist-status" role="status" aria-live="polite"></p>
+       </form>
+    </section>
+    <section class="memory-section" aria-labelledby="timeline-heading">
+        <div class="section-heading"><p class="eyebrow" id="timeline-eyebrow"></p><h2 id="timeline-heading"></h2></div>
+       <ol class="timeline" id="timeline"></ol>
+    </section>
+    <section class="memory-section memory-map-section" aria-labelledby="memory-map-heading">
+      <div class="section-heading"><p class="eyebrow">PLACES WE LOVED</p><h2 id="memory-map-heading">回忆地图</h2></div>
+      <p class="section-intro">把一起走过的城市、约会地点和照片，留在同一张地图上。</p>
+      <div class="memory-map" id="memory-map" aria-label="共同回忆地点地图"></div>
+      <div class="place-detail" id="place-detail" aria-live="polite"></div>
+    </section>
+    <section class="memory-section" aria-labelledby="mood-calendar-heading">
+      <div class="section-heading split-heading"><div><p class="eyebrow">A MONTH OF US</p><h2 id="mood-calendar-heading">心情日历</h2></div><div class="calendar-nav"><button class="text-button calendar-previous" type="button" aria-label="上个月">上月</button><button class="text-button calendar-next" type="button" aria-label="下个月">下月</button></div></div>
+      <p class="calendar-month" id="calendar-month"></p>
+      <div class="mood-calendar" id="mood-calendar" role="grid" aria-label="心情月历"></div>
+      <form class="mood-form" id="mood-form">
+        <label>日期<input id="mood-date" type="date" required></label>
+        <label>心情<select id="mood-value"><option value="开心">开心</option><option value="想念">想念</option><option value="平静">平静</option><option value="惊喜">惊喜</option></select></label>
+        <label>天气<input id="mood-weather" type="text" maxlength="12" placeholder="晴朗"></label>
+        <label class="wide-field">一句话<input id="mood-note" type="text" maxlength="48" placeholder="今天也很喜欢你"></label>
+        <button class="primary-button" type="submit">记录今天</button><p class="form-status mood-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+    <section class="memory-section" aria-labelledby="countdowns-heading">
+      <div class="section-heading"><p class="eyebrow">LOOKING FORWARD</p><h2 id="countdowns-heading">倒数日</h2></div>
+      <div class="countdown-grid" id="countdown-grid"></div>
+    </section>
+    <section class="memory-section" aria-labelledby="memory-search-heading">
+      <div class="section-heading"><p class="eyebrow">FIND A MOMENT</p><h2 id="memory-search-heading">回忆搜索</h2></div>
+      <form class="memory-search" id="memory-search"><label class="search-field">搜索照片与事件<input id="memory-search-input" type="search" placeholder="日期、关键词、地点或标签"></label><label>日期<input id="memory-search-date" type="date"></label><label>地点<select id="memory-search-place"><option value="">全部地点</option></select></label><label>标签<select id="memory-search-tag"><option value="">全部标签</option></select></label></form>
+      <p class="search-summary" id="search-summary" aria-live="polite"></p><div class="search-results" id="search-results"></div>
+    </section>
+    <section class="memory-section" aria-labelledby="report-heading">
+      <div class="section-heading"><p class="eyebrow">OUR YEAR IN REVIEW</p><h2 id="report-heading">年度报告</h2></div>
+      <div class="report-grid" id="report-grid"></div>
+    </section>
+    <section class="memory-section holiday-section" id="holiday-section" aria-labelledby="holiday-heading" hidden>
+      <div class="holiday-card"><p class="eyebrow" id="holiday-eyebrow"></p><h2 id="holiday-heading"></h2><p id="holiday-message"></p></div>
+    </section>
+    <section class="memory-section" aria-labelledby="collaboration-heading">
+      <div class="section-heading"><p class="eyebrow">TWO OF US</p><h2 id="collaboration-heading">双人协作入口</h2></div>
+      <p class="section-intro">在同一台设备上轮流提交照片、事件与留言，所有内容只保存在当前浏览器。</p>
+      <form class="collaboration-form" id="collaboration-form"><label>来自<select id="collaboration-author"></select></label><label>内容类型<select id="collaboration-type"><option value="event">事件</option><option value="message">留言</option><option value="photo">照片</option></select></label><label>日期<input id="collaboration-date" type="date" required></label><label>地点<select id="collaboration-place"></select></label><label class="wide-field">内容<input id="collaboration-content" type="text" maxlength="80" required placeholder="写下这一刻"></label><label class="wide-field">照片（可选）<input id="collaboration-photo" type="file" accept="image/*"></label><button class="primary-button" type="submit">提交给我们</button><p class="form-status collaboration-status" role="status" aria-live="polite"></p></form>
+      <div class="collaboration-feed" id="collaboration-feed"></div>
+    </section>
+    <section class="memory-section share-section" aria-labelledby="share-heading">
+       <div class="section-heading"><p class="eyebrow" id="share-eyebrow"></p><h2 id="share-heading"></h2></div>
+       <div class="share-card"><p id="share-lead"></p><strong><span id="share-days">0</span> <small id="share-unit"></small></strong><p class="share-card-note" id="share-note"></p></div>
+       <button class="primary-button generate-poster" type="button"></button>
+    </section>
+    <section class="memory-section theme-section" aria-labelledby="theme-heading">
+       <div class="section-heading"><p class="eyebrow" id="theme-eyebrow"></p><h2 id="theme-heading"></h2></div>
+      <div class="theme-picker" role="group" aria-label="选择纪念页主题"></div>
+    </section>
+  </main>
   <div class="snow" aria-hidden="true"></div>
-<script>
-  var musicDom = document.querySelector('.music');
-  // var bannerDom = document.querySelector('.banner');
-  var audioDom = document.querySelector('.audio');
-  // var videoDom = document.querySelector('.video');
-  // var swiperWrapDom = document.querySelector('.swiper-wrap');
-  // var playVideo = document.querySelector('.our-name');
-  var musicCloseDom = musicDom.querySelector('.music-close');
-  var curImgDom = document.getElementById('current-img');
-  if ( audioDom.readyState == 4) { // android会走此逻辑
-      // @todo
-      console.log('loaded');
-  } else { // iOS走此逻辑
-      audioDom.addEventListener('play', function () {
-          try {
-              musicCloseDom.classList.add('rotate');
-          } catch (error) {
-              // console.log('error', error);
-          }
-      }, false);
-      audioDom.addEventListener('canplaythrough', function () {
-          try {
-              // chrome浏览器没有也页面交互（点击，滚动）之前会报错误---Uncaught（in promise）DOMException：play（）
-              //处理方法设置浏览器autoplay-policy---https://blog.csdn.net/super_XYQ/article/details/83026792
-              var promise = audioDom.play();
-              if (promise !== undefined) {
-                  promise.then(function () {
-                      musicCloseDom.classList.add('rotate');
-                  }).catch(function () {
-                      musicCloseDom.classList.remove('rotate');
-                  });
-              }
-          } catch (error) {
-              console.log('error', error);
-          }
-      }, false);
-      audioDom.load();
-  }
-
-  musicDom.addEventListener('click', function (event) {
-      if (!audioDom.paused) {
-          audioDom.pause();
-          musicCloseDom.classList.remove('rotate');
-      } else {
-          var promise = audioDom.play();
-          if (promise !== undefined) {
-              promise.then(function () {
-                  musicCloseDom.classList.add('rotate');
-              }).catch(function () {
-                  musicCloseDom.classList.remove('rotate');
-              });
-          }
-      }
-
-      event.preventDefault();
-  }, false);
-
-  function loadImage(imgIndex) {
-      // console.log('imgIndex:',imgIndex);
-      // var img = new Image();
-      curImgDom.src = imgList[imgIndex];
-      // curImgDom.setAttribute('src', imgList[imgIndex]);
-      if (isInitImage) {
-          $('.img-intro').text(imgDescList[imgIndex]);
-          return;
-      }else {
-          // curImgDom.src = imgList[imgIndex];
-          if (curImgDom.complete) {
-              $('.img-intro').text(imgDescList[imgIndex]);
-              return false;
-          }
-          curImgDom.onload = function () {
-              $('.img-intro').text(imgDescList[imgIndex]);
-          };
-      }
-      
-  }
-  var imgList = ['./images/love.jpg', './images/1.jpg', './images/2.jpg', './images/3.jpg', './images/1.jpg', './images/love.jpg'];
-  var imgDescList = ['轻轻地说一声：“我喜欢你！”','你往前走，我一定在你身后','You are my today and all of my tomorrows.','你是我的今天和所有的明天','"love you to the moon and back" - 《Guess How Much | Love You》','轻轻地说一声：“我喜欢你！”'];
-  var isInitImage = false; //循环图片列表之后改了true,取消onload事件;
-  var imgIndex = 0;
-  function setTimer(){
-      var timer = setInterval(function() {
-          imgIndex = 1 + imgIndex;
-          if (imgIndex > (imgList.length - 1)) {
-              imgIndex = 0;
-              if (!isInitImage) {
-                  isInitImage = true;
-                  curImgDom.onload = null;
-              }
-          }
-          imgIndex = (imgIndex > (imgList.length - 1)) ? 0 : imgIndex;
-          loadImage(imgIndex);
-      }, 3000);
-      return timer;
-  }
-  var timer= setTimer();
-</script>
+  <dialog class="photo-dialog" aria-label="照片全屏查看">
+    <button class="dialog-close" type="button" aria-label="关闭全屏照片"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg></button>
+    <img id="dialog-image" src="" alt=""><p><span id="dialog-caption"></span><time id="dialog-date"></time></p>
+  </dialog>
+  <dialog class="poster-dialog" aria-labelledby="poster-dialog-title">
+    <div class="poster-dialog-header">
+      <div><p class="eyebrow">MAKE IT YOURS</p><h2 id="poster-dialog-title">制作纪念海报</h2></div>
+      <button class="dialog-close poster-close" type="button" aria-label="关闭海报编辑器"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg></button>
+    </div>
+    <div class="poster-editor">
+      <div class="poster-preview-wrap" aria-busy="false"><canvas class="poster-preview" width="1080" height="1350" aria-label="海报预览"></canvas></div>
+      <form class="poster-controls">
+        <fieldset>
+          <legend>海报模板</legend>
+          <div class="poster-template-picker" role="radiogroup" aria-label="海报模板">
+            <label class="poster-template"><input type="radio" name="poster-template" value="classic" checked><span>纯文字</span></label>
+            <label class="poster-template"><input type="radio" name="poster-template" value="photo"><span>照片全屏</span></label>
+            <label class="poster-template"><input type="radio" name="poster-template" value="film"><span>胶片时刻</span></label>
+          </div>
+        </fieldset>
+        <div class="poster-field-grid">
+          <label>发布尺寸<select class="poster-size" aria-label="发布尺寸"><option value="portrait">朋友圈竖版 1080 x 1350</option><option value="square">社交方图 1080 x 1080</option><option value="story">故事竖图 1080 x 1920</option></select></label>
+          <label>海报主题<select class="poster-theme" aria-label="海报主题"><option value="">自定义配色</option></select></label>
+        </div>
+        <label>自定义配色<input class="poster-color" type="color" value="#C81E4B"></label>
+        <label>纪念日期<input class="poster-date" type="date"></label>
+        <label>海报文案<textarea class="poster-message" rows="3" aria-describedby="poster-message-count"></textarea><span class="poster-message-count" id="poster-message-count" aria-live="polite"></span></label>
+        <label class="poster-photo-toggle"><input class="poster-use-photo" type="checkbox"><span>使用照片</span></label>
+        <fieldset class="poster-photo-field"><legend>选择照片</legend><div class="poster-photo-picker" role="group" aria-label="选择海报照片"></div></fieldset>
+      </form>
+    </div>
+    <div class="poster-actions">
+      <p class="poster-status" role="status" aria-live="polite"></p>
+      <div><button class="secondary-button download-poster" type="button">下载 PNG</button><button class="primary-button share-poster" type="button">分享海报</button></div>
+    </div>
+  </dialog>
 </body>
-
 </html>

@@ -1,36 +1,31 @@
 /**
  * 计时器,每次重新计算效率有待优化
  * @param  {[type]} target [description]
- * @param  {[type]} d      [description]
- * @param  {[type]} h      [description]
- * @param  {[type]} m      [description]
- * @param  {[type]} s      [description]
- * @return {[type]}        [description]
+ * @param {string} d Element ID for days
+ * @param {string} h Element ID for hours
+ * @param {string} m Element ID for minutes
+ * @param {string} s Element ID for seconds
+ * @param {Function} onTick Receives the current time parts after each update
+ * @return {number} Interval ID
  */
-var countTime = function (target, d, h, m, s) {
-    var his = new Date(target).getTime();
-    var diff = calcDifference(Date.now() - his);
-    _countTime(diff, d, h, m, s);
-    setInterval(function () {
-        diff = calcDifference(Date.now() - his);
-        _countTime(diff, d, h, m, s);
-    }, 1000);
-};
+var countTime = function (target, d, h, m, s, onTick) {
+    var targetTime = new Date(target).getTime();
+    var elements = [d, h, m, s].map(function (id) {
+        return document.getElementById(id);
+    });
 
+    function update() {
+        var diff = calcDifference(Date.now() - targetTime);
+        elements.forEach(function (element, index) {
+            element.textContent = diff[index];
+        });
+        if (onTick) {
+            onTick(diff);
+        }
+    }
 
-/**
- * 更改显示值
- * @param  {[type]} d [description]
- * @param  {[type]} h [description]
- * @param  {[type]} m [description]
- * @param  {[type]} s [description]
- * @return {[type]}   [description]
- */
-var _countTime = function (diff, d, h, m, s) {
-    $('#' + d).text(diff[0]);
-    $('#' + h).text(diff[1]);
-    $('#' + m).text(diff[2]);
-    $('#' + s).text(diff[3]);
+    update();
+    return window.setInterval(update, 1000);
 };
 
 
